@@ -52,4 +52,21 @@
   window.addEventListener("resize", resize);
   resize();
   draw();
+
+  const carousel = document.getElementById("chartCarousel");
+  const previous = document.querySelector("[data-carousel-prev]");
+  const next = document.querySelector("[data-carousel-next]");
+
+  function moveCarousel(direction) {
+    if (!carousel) return;
+    carousel.scrollBy({
+      left: direction * Math.max(320, carousel.clientWidth * 0.82),
+      behavior: "smooth"
+    });
+  }
+
+  if (previous && next) {
+    previous.addEventListener("click", () => moveCarousel(-1));
+    next.addEventListener("click", () => moveCarousel(1));
+  }
 }());
