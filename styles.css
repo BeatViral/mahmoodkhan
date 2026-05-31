@@ -149,11 +149,12 @@ main,
 
 .hero {
   min-height: auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
-  align-items: center;
-  gap: clamp(36px, 6vw, 86px);
+  display: block;
   padding: 74px 0 82px;
+}
+
+.hero-copy {
+  max-width: 980px;
 }
 
 .eyebrow,
@@ -233,72 +234,6 @@ h1 span {
   border-color: rgba(156, 255, 112, 0.52);
   background: linear-gradient(135deg, var(--cyan), var(--lime));
   box-shadow: 0 16px 44px rgba(23, 231, 255, 0.22), 0 10px 38px rgba(156, 255, 112, 0.12);
-}
-
-.hero-art {
-  position: relative;
-}
-
-.art-frame {
-  position: relative;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background:
-    linear-gradient(135deg, rgba(255, 209, 92, 0.14), transparent 34%),
-    linear-gradient(315deg, rgba(23, 231, 255, 0.16), transparent 38%),
-    rgba(5, 7, 13, 0.82);
-  box-shadow: var(--shadow), 0 0 58px rgba(255, 51, 102, 0.16);
-  transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
-}
-
-.compact-art {
-  width: min(100%, 420px);
-  justify-self: end;
-}
-
-.art-frame::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 1px solid rgba(23, 231, 255, 0.28);
-  pointer-events: none;
-}
-
-.art-frame img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  image-rendering: auto;
-  filter: saturate(1.18) contrast(1.08);
-}
-
-.track-panel {
-  position: relative;
-  width: min(92%, 340px);
-  margin: -20px 0 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(9, 13, 24, 0.92);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-
-.track-panel span,
-.track-panel em {
-  display: block;
-  color: var(--quiet);
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.track-panel strong {
-  display: block;
-  margin: 8px 0;
-  color: var(--gold);
-  font-family: "Space Grotesk", Inter, sans-serif;
-  font-size: clamp(1.3rem, 2.3vw, 2rem);
-  line-height: 1;
 }
 
 .marquee {
@@ -830,10 +765,6 @@ h1 span {
 
   nav a {
     white-space: nowrap;
-  }
-
-  .art-frame {
-    transform: none;
   }
 
   .release-grid {
