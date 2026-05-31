@@ -362,6 +362,7 @@ h1 span {
 
 .release-card,
 .story-stack article,
+.book-card,
 .video-stage,
 .bridge-section,
 .contact-section {
@@ -450,6 +451,73 @@ h1 span {
   font-size: 1.4rem;
 }
 
+.books-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.book-card {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--hot), var(--cyan));
+}
+
+.book-card::after {
+  content: "AUTHOR";
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.book-card.pen-name::after {
+  content: "SAVOR";
+}
+
+.book-card h3 {
+  max-width: 720px;
+  margin-bottom: 18px;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 0.9;
+}
+
+.book-card p {
+  position: relative;
+  max-width: 620px;
+  color: var(--muted);
+  line-height: 1.68;
+  z-index: 1;
+}
+
+.book-card a {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  color: var(--gold);
+  font-weight: 900;
+}
+
 .video-stage {
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) 1fr;
@@ -535,6 +603,10 @@ h1 span {
 
   .release-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
   }
 
   .release-card.featured {
