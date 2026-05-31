@@ -150,7 +150,7 @@ main,
 .hero {
   min-height: auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
   align-items: center;
   gap: clamp(36px, 6vw, 86px);
   padding: 74px 0 82px;
@@ -241,7 +241,7 @@ h1 span {
 
 .art-frame {
   position: relative;
-  padding: 16px;
+  padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background:
     linear-gradient(135deg, rgba(255, 209, 92, 0.14), transparent 34%),
@@ -249,6 +249,11 @@ h1 span {
     rgba(5, 7, 13, 0.82);
   box-shadow: var(--shadow), 0 0 58px rgba(255, 51, 102, 0.16);
   transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+}
+
+.compact-art {
+  width: min(100%, 420px);
+  justify-self: end;
 }
 
 .art-frame::before {
@@ -261,7 +266,7 @@ h1 span {
 
 .art-frame img {
   width: 100%;
-  aspect-ratio: 1200 / 630;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   image-rendering: auto;
   filter: saturate(1.18) contrast(1.08);
@@ -269,8 +274,8 @@ h1 span {
 
 .track-panel {
   position: relative;
-  width: min(88%, 420px);
-  margin: -28px 0 0 auto;
+  width: min(92%, 340px);
+  margin: -20px 0 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(9, 13, 24, 0.92);
   padding: 18px;
@@ -292,7 +297,7 @@ h1 span {
   margin: 8px 0;
   color: var(--gold);
   font-family: "Space Grotesk", Inter, sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.3rem, 2.3vw, 2rem);
   line-height: 1;
 }
 
