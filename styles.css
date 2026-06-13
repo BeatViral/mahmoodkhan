@@ -342,6 +342,97 @@ h1 span {
   margin-top: 18px;
 }
 
+.builder-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.builder-section .wide-heading h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 5.5vw, 6rem);
+  line-height: 0.9;
+}
+
+.builder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.builder-card {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.builder-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--lime), var(--gold), var(--hot));
+}
+
+.builder-card::after {
+  content: "";
+  position: absolute;
+  right: -58px;
+  bottom: -72px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(23, 231, 255, 0.24);
+  transform: rotate(28deg);
+  box-shadow: 0 0 60px rgba(23, 231, 255, 0.1);
+}
+
+.builder-card.flagship {
+  grid-column: span 2;
+  min-height: 380px;
+  border-color: rgba(156, 255, 112, 0.36);
+  background:
+    linear-gradient(135deg, rgba(156, 255, 112, 0.14), transparent 32%),
+    linear-gradient(315deg, rgba(255, 51, 102, 0.16), transparent 36%),
+    linear-gradient(180deg, var(--panel), rgba(7, 9, 17, 0.72));
+}
+
+.builder-card span {
+  position: relative;
+  z-index: 1;
+  color: var(--cyan);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.builder-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 24px 0 16px;
+  font-size: clamp(1.65rem, 3.2vw, 4rem);
+  line-height: 0.94;
+}
+
+.builder-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.66;
+}
+
+.builder-card a {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  color: var(--gold);
+  font-weight: 900;
+}
+
 .chart-section {
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
@@ -404,6 +495,7 @@ h1 span {
 .release-card,
 .story-stack article,
 .book-card,
+.builder-card,
 .video-stage,
 .bridge-section,
 .contact-section {
@@ -763,6 +855,7 @@ h1 span {
   .site-header,
   .hero,
   .phatso-feature,
+  .builder-grid,
   .chart-section,
   .story-section,
   .video-stage,
@@ -808,6 +901,10 @@ h1 span {
   .release-card.featured {
     grid-column: span 2;
   }
+
+  .builder-card.flagship {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 620px) {
@@ -829,6 +926,10 @@ h1 span {
   .release-card.featured {
     grid-template-columns: 1fr;
     grid-column: auto;
+  }
+
+  .builder-card {
+    min-height: 300px;
   }
 
   .track-panel {
